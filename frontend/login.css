@@ -1,0 +1,227 @@
+/* ---------- GLOBAL BACKGROUND ---------- */
+.auth-body {
+  min-height: 100vh;
+  background: radial-gradient(circle at 10% 20%, #0b1220, #050b16 65%, #00040c);
+  font-family: "Poppins", system-ui, sans-serif;
+  color: #e5e7eb;
+}
+
+/* ---------- MAIN CARD ---------- */
+.auth-card {
+  max-width: 900px;
+  width: 100%;
+  background: rgba(17, 25, 40, 0.92);
+  border-radius: 1.8rem;
+  animation: floatIn 0.8s ease-out forwards;
+  backdrop-filter: blur(18px);
+}
+
+/* ---------- LEFT BRAND PANEL ---------- */
+.brand-panel {
+  padding: 3rem 2.2rem;
+  background: linear-gradient(135deg, #6d28d9, #4c1d95);
+  color: white;
+  position: relative;
+  overflow: hidden;
+  border-right: 1px solid rgba(255,255,255,0.15);
+}
+
+.brand-panel h3,
+.brand-panel p,
+.brand-panel li {
+  font-size: 1.05rem;
+  font-weight: 300;
+}
+
+/* subtle geometric pattern */
+.brand-panel::before {
+  content: "";
+  position: absolute;
+  inset: -35%;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.09) 1px, transparent 0);
+  background-size: 22px 22px;
+  opacity: 0.45;
+}
+
+.brand-panel > * {
+  position: relative;
+  z-index: 2;
+}
+
+.brand-logo i {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.brand-logo span {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Check icon circle */
+.check-icon {
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.25);
+}
+
+/* ---------- RIGHT PANEL + FORM ---------- */
+.form-panel {
+  padding: 3rem 3rem;
+  position: relative;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+/* swap containers */
+.form-view {
+  opacity: 0;
+  transform: translateX(18px);
+  transition: opacity .35s ease, transform .35s ease;
+}
+
+.form-view.active-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* labels */
+.form-label {
+  font-size: 0.9rem;
+  color: #cbd5e1 !important;
+  font-weight: 400;
+}
+
+/* ---------- INPUTS ---------- */
+.custom-input {
+  background: #0a0f1a;
+  border-radius: 12px;
+  padding-left: 6px;
+  box-shadow: 0 0 0 1px rgba(148,163,184,0.35);
+  transition: box-shadow .2s, transform .2s, background .2s;
+}
+
+.custom-input:focus-within {
+  box-shadow: 0 0 0 2px #6366f1;
+  background: #0d1220;
+  transform: translateY(-1px);
+}
+
+.custom-input .input-group-text {
+  background: transparent;
+  border: none;
+  color: #9ca3af;
+  font-size: 1.1rem;
+}
+
+.custom-input .form-control {
+  background: transparent;
+  border: none;
+  color: #f1f5f9;
+  font-size: 1rem;
+}
+
+.custom-input .form-control::placeholder {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* ---------- BUTTONS ---------- */
+.gradient-btn,
+.gradient-btn-pink {
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 12px 10px;
+  letter-spacing: .3px;
+  transition: .25s ease;
+}
+
+.gradient-btn {
+  background: linear-gradient(90deg, #4f46e5, #6366f1);
+  color: white;
+}
+
+.gradient-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(79,70,229,0.5);
+}
+
+.gradient-btn-pink {
+  background: linear-gradient(90deg, #e11d48, #f43f5e);
+  color: white;
+}
+
+.gradient-btn-pink:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(244,63,94,0.55);
+}
+
+/* ---------- SMALL LINKS ---------- */
+.link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 4px;
+  color: #38bdf8;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.link-button:hover {
+  text-decoration: underline;
+}
+
+/* ---------- ERRORS & ANIMATIONS ---------- */
+#passwordError {
+  font-size: 0.85rem;
+}
+
+.shake {
+  animation: shake .35s linear;
+}
+
+@keyframes floatIn {
+  from { opacity: 0; transform: translateY(18px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  50% { transform: translateX(6px); }
+  75% { transform: translateX(-4px); }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 767px) {
+  .brand-panel { display: none; }
+  .form-panel { padding: 2rem 1.3rem; }
+  .auth-card { max-width: 93%; border-radius: 1.2rem; }
+  h3 { font-size: 1.6rem; }
+}
+
+/* notification slide panel */
+.nt-notify-panel {
+  position: fixed;
+  top: 0;
+  right: -380px;
+  width: 350px;
+  height: 100vh;
+  background: #020617;
+  border-left: 1px solid rgba(148,163,184,0.3);
+  transition: right .35s ease;
+  z-index: 9999;
+}
+.nt-notify-panel.active {
+  right: 0;
+}
