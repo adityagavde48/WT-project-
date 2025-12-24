@@ -1,0 +1,166 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Dark background */
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #0f172a 0, #020617 45%, #000 100%);
+    color: #ffffff; /* MAIN TEXT BRIGHT WHITE */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    backdrop-filter: blur(18px);
+    background: linear-gradient(
+        90deg,
+        rgba(15, 23, 42, 0.95),
+        rgba(30, 64, 175, 0.7)
+    ) !important;
+}
+
+.user-name-text {
+    font-size: 0.95rem;
+    color: #f8fafc; /* brighter white */
+}
+
+/* Avatar initials circle */
+.avatar-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #4f46e5, #14b8a6);
+    color: #fff;
+    font-weight: 700;
+}
+
+/* Cards */
+.glass-card {
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(148, 163, 184, 0.5);
+    border-radius: 18px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.85);
+    color: #ffffff; /* Pure white text */
+}
+
+/* Hover effect */
+.glass-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(96, 165, 250, 0.9);
+}
+
+/* Large profile avatar */
+.avatar-large {
+    width: 85px;
+    height: 85px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-inline: auto;
+    background: radial-gradient(circle at 20% 20%, #3b82f6, #9333ea 60%, #0ea5e9);
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+    border: 4px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Info labels */
+.info-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    color: #c7d2fe; /* brighter lavender-blue */
+    text-transform: uppercase;
+}
+
+/* Info values */
+.info-value {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f1f5f9; /* bright white-blue */
+}
+
+/* Section title */
+.card-title {
+    color: #ffffff; /* bright heading text */
+    font-weight: 600;
+}
+
+/* Progress wrapper */
+.progress-wrapper {
+    background: rgba(30, 41, 59, 0.8);
+    padding: 0.7rem;
+    border-radius: 999px;
+}
+
+/* Progress bar background */
+.progress {
+    background: rgba(51, 65, 85, 0.8);
+    height: 0.85rem;
+    border-radius: 999px;
+}
+
+/* Progress bar fill */
+.progress-bar {
+    background: linear-gradient(90deg, #22c55e, #86efac);
+    box-shadow: 0 0 12px #22c55e;
+}
+
+/* Progress badge */
+.bg-gradient {
+    background: linear-gradient(135deg, #3b82f6, #6366f1, #22c55e);
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Activity list */
+#activityList li {
+    padding: 0.6rem 0.5rem;
+    border-bottom: 1px dashed rgba(148, 163, 184, 0.4);
+    color: #f8fafc; /* brighter text */
+}
+
+.activity-meta {
+    color: #d1d5db; /* brighter grey for date/time */
+    font-size: 0.8rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.12s;
+}
+
+.delay-2 {
+    animation-delay: 0.24s;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .avatar-large {
+        width: 70px;
+        height: 70px;
+        font-size: 1.6rem;
+    }
+}
